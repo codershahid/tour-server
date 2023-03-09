@@ -13,6 +13,10 @@ app.get("/", (req, res) => {
   res.json({ Message: "Welcome to Tour App" });
 });
 
+// Import Routes
+const travellerRoutes = require("./routes/travellers");
+app.use("/travellers", travellerRoutes);
+
 // Database Connection
 mongoose
   .set("strictQuery", true)
